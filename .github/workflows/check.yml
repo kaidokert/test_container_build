@@ -1,0 +1,13 @@
+name: Check
+
+on:
+  workflow_run:
+    workflows: [ Docker ]
+    types: [ completed ]
+
+jobs:
+  some-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo foo
